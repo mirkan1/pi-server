@@ -1,10 +1,12 @@
+import os
 import flask
 from switch import Switch
 
 app = flask.Flask(__name__)
 app.name = "raspberry-pi"
 
-SWITCHER = Switch("default") # Switch
+NOTIFYME_ACCESS_CODE = os.environ.get("NOTIFYME_ACCESS_CODE")
+SWITCHER = Switch(NOTIFYME_ACCESS_CODE, "unknown-plug") # Switch
 
 @app.route("/")
 def index():
