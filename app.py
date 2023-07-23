@@ -31,7 +31,9 @@ def notify():
     message = flask.request.args.get("message")
     if not message:
         return flask.jsonify({"status": "error", "message": "No message specified"})
-    SWITCHER.notify_me(message)
+    notification_success = SWITCHER.notify_me(message)
+    if not notification_success:
+        return flask.jsonify({"status": "error", "message": "Error sending notification"})
     return flask.jsonify({"status": "ok"})
 
 if __name__ == "__main__":
