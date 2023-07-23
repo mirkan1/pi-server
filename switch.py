@@ -8,7 +8,7 @@ NOTIFYME_ACCESS_CODE = os.environ.get("NOTIFYME_ACCESS_CODE")
 #     raise Exception("ACCESS_CODE environment variable not set")
 
 class Switch:
-    def __init__(self, NOTIFYME_ACCESS_CODE, plug_name="default"):
+    def __init__(self, plug_name="default"):
         self.plug_name = plug_name
         self.url = "https://api.notifymyecho.com/v1/NotifyMe"
         self.params = {
