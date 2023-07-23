@@ -1,5 +1,6 @@
 import sys
 import logging
+import os
  
 sys.path.insert(0, '/var/www/pi-server')
 sys.path.insert(0, '/var/www/pi-server/venv/lib/python3.7/site-packages/')
